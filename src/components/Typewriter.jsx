@@ -3,15 +3,16 @@ const Typewriter = ({ text, speed = 100, delay = 0}) => {
     const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
-        let i = 0;
+        setDisplayText('');
         const startTimeout = setTimeout(() => {
             const typingInterval = setInterval(() => {
-                if (i < text.length) {
-                    setDisplayText((prev) => prev + text.charAt(i));
-                    i++;
-                } else {
-                    clearInterval(typingInterval);
-                }
+                setDisplayText((prev) => {
+                    if (prev.length >= text.length) {
+                        clearInterval(typingInterval);
+                        return prev;
+                    }
+                    return text.slice(0, prev.length + 1);
+                })
             }, speed);
 
             return () => clearInterval(typingInterval);
@@ -23,7 +24,6 @@ const Typewriter = ({ text, speed = 100, delay = 0}) => {
     return (
         <span>
             {displayText}
-            <span className="animate-cursor"></span>
         </span>
     );
 }

@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Servicios from './components/Servicios'
 import Metodologia from './components/Metodologia';
+import Arquitectura from './components/Arquitectura';
+import Contacto from './components/Contacto'
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
               <>
                 <Hero />
                 <Servicios />
+                <Arquitectura />
                 <Metodologia />
+                <Contacto />
               </>
             } />
           </Routes>

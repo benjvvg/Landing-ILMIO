@@ -41,7 +41,7 @@ function Servicios() {
     ];
 
     return (
-        <section id="servicios" className="py-24 px-4 relative z-10">
+        <section id="servicios" className="py-24 px-4 relative z-10 bg-black/30 backdrop-blur-sm border-y border-white/5">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl  md:text-5xl font-bold text-white mb-4">Servicios</h2>

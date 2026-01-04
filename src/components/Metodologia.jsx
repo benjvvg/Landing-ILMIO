@@ -20,7 +20,7 @@ function Metodologia() {
                     </p>
                 </div>
                 {/* Linea */}
-                <div className="absolute left-8 md:left-1/2 top-40 bottom-20 w-0.5 bg-linear-to-b from-violet-500 via-fuchsia-500 to-transparent -translate-x-1/2 z-0"></div>
+                <div className="absolute left-8 md:left-1/2 top-40 -bottom-10 w-0.5 bg-linear-to-b from-violet-500 via-fuchsia-500 to-transparent -translate-x-1/2 z-0"></div>
                 {/* --- LOS PASOS --- */}
                 <div className="relative z-10">
                     {pasos.map((paso, index) => (

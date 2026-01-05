@@ -28,15 +28,6 @@ function Arquitectura() {
             icono: <BsCpu className="text-fuchsia-400" />,
             color: "from-fuchsia-500/20 to-pink-500/5",
             borde: "border-fuchsia-500/30"
-        },
-        {
-            id: "datos",
-            nombre: "Infraestructura & Datos",
-            desc: "Persistencia segura y escalable.",
-            tools: ["AWS / Azure", "PostgreSQL", "Redis"],
-            icono: <BsHddStack className="text-emerald-400" />,
-            color: "from-emerald-500/20 to-green-500/5",
-            borde: "border-emerald-500/30"
         }
     ];
 
@@ -44,10 +35,6 @@ function Arquitectura() {
         <section className="py-24 px-4 relative z-10">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/10 mb-4">
-                        <BsLightningCharge className="text-yellow-400" />
-                        <span className="text-violet-200 text-xs font-bold uppercase tracking-wider">El Motor</span>
-                    </div>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Arquitectura en capas</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
                         Resolviendo hoy y expandiendo hacia el ecosistema neuronal de IA

@@ -21,14 +21,18 @@ function Contacto() {
                                 Cúentanos tu proceso crítico. Te devolvemos una ruta técnica clara para avanzar sin romper funcionalidades.
                             </p>
                             <div className='flex flex-col md:flex-row items-center justify-center gap-6 mb-10'>
-                                <a href="mailto:contacto@ilmio.tech?subject=Cotización%20Proyecto%20ILMIO" 
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@ilmio.tech&su=Cotización%20Proyecto%20ILMIO"
+                                target='_blank'
+                                rel='noopener noreferrer' 
                                 className='group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-white/5 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all hover:border-white/50 backdrop-blur-sm hover:scale-105'>
                                     <BsEnvelopeAt className='text-xl' />
-                                    <span>Solicitar Cotizacion</span>
+                                    <span>Solicitar Cotización</span>
                                     <BsArrowRight className='group-hover:translate-x-1 transition-transform' />
                                 </a>
 
-                                <a href="mailto:contacto@ilmio.tech?subject=Solicitud%20Más%20Información"
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@ilmio.tech&su=Solicitud%20Más%20Información"
+                                target='_blank'
+                                rel='noopener noreferrer'
                                 className='group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-white/5 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all hover:border-white/50 backdrop-blur-sm hover:scale-105'
                                 >
                                     <BsChatText className='text-xl' />

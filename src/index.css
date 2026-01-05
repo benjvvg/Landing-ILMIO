@@ -44,3 +44,7 @@
 .animate-grid-flow {
     animation: moveBackground 4s linear infinite;
 }
+
+html {
+    scroll-behavior: smooth;
+}

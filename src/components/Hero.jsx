@@ -2,7 +2,7 @@ import Typewriter from '../components/Typewriter'
 
 function Hero() {
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 relative overflow-hidden bg-gray-900">
+        <section id="inicio" className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 relative overflow-hidden bg-gray-900">
 
             <div className='absolute inset-0 w-full h-full pointer-events-none'>
                 <div className='absolute top-0 left-1/4 w-96 h-96 bg-violet-600/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob'></div>
@@ -23,7 +23,7 @@ function Hero() {
                 </h1>
                 <p className="text-xl text-gray-200 max-w-2xl mb-8 leading-relaxed opacity-0 animate-[fadeInUp_1s_ease-out_2s_forwards]">
                     Diseñamos <strong>sistemas vivos</strong> que aprenden,
-                    se adaptan y generan impacto real.
+                    se adaptan y generan impacto.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-12 opacity-0 animate-[fadeInUp_1s_ease-out_2.5s_forwards]">
                     <a href="#contacto" className="bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(124,58,237,0.4)]">

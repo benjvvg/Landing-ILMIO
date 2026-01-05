@@ -2,21 +2,21 @@ import { BsCodeSlash, BsGraphUpArrow, BsPencilSquare, BsRocketTakeoff, BsSearch,
 
 function Metodologia() {
     const pasos = [
-        { num: "01", titulo: "Diagnóstico", desc: "Proceso, datos, riesgos y arquitectura actual.", icono: <BsSearch /> },
-        { num: "02", titulo: "Diseño", desc: "Flujos, seguridad y experiencia de usuario.", icono: <BsPencilSquare />  },
-        { num: "03", titulo: "Implementación", desc: "Integración + automatización + agentes IA.", icono: <BsCodeSlash />  },
+        { num: "01", titulo: "Diagnóstico", desc: "Proceso, datos, riesgos, permisos y arquitectura actual.", icono: <BsSearch /> },
+        { num: "02", titulo: "Diseño", desc: "Flujos, integración, seguridad y experiencia de usuario.", icono: <BsPencilSquare />  },
+        { num: "03", titulo: "Implementación", desc: "Integración + Automatización + Agentes IA.", icono: <BsCodeSlash />  },
         { num: "04", titulo: "Go-live", desc: "UAT, entrenamiento y despliegue.", icono: <BsRocketTakeoff />  },
         { num: "05", titulo: "Evolución", desc: "Soporte mensual, mejoras y métricas.", icono: <BsGraphUpArrow />  },
         { num: "06", titulo: "Nodo ILMIO", desc: "Transformación en componente reutilizable.", icono: <BsShare />  },
     ];
 
     return (
-        <section id="como" className="py-24 px-4 relative overflow-hidden">
+        <section id="operación" className="py-24 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative">
                 <div className="text-center mb-20 relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Cómo trabajamos</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Operación</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Una metodología clara, sin cajas negras, diseñada para la continuidad operativa.
+                        Eliminamos la burocracia innecesaria. Un flujo de trabajo ágil diseñado para entregar valor tangible rapidamente.
                     </p>
                 </div>
                 <div className="absolute left-8 md:left-1/2 top-40 -bottom-10 w-0.5 bg-linear-to-b from-violet-500 via-fuchsia-500 to-transparent -translate-x-1/2 z-0"></div>

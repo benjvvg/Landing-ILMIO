@@ -10,7 +10,7 @@ function Servicios() {
         },
         {
             id: 2,
-            titulo: "Canales Inteligentes",
+            titulo: "Omnicanalidad",
             desc: "Experiencias conversacionales (WhatsApp/Web) con agentes IA, contexto y derivación humana.",
             icono: <BsWhatsapp className="h-8 w-8 text-green-400" />
         },
@@ -41,28 +41,41 @@ function Servicios() {
     ];
 
     return (
-        <section id="servicios" className="py-24 px-4 relative z-10 bg-black/30 backdrop-blur-sm border-y border-white/5">
+        <section id="servicios" className="py-24 px-4 relative z-10">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl  md:text-5xl font-bold text-white mb-4">Servicios</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Capacidades</h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
                         Soluciones pensadas para resolver necesidades reales hoy y construir el ecosistema del mañana.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {listaServicios.map((item) => (
-                        <div key={item.id} className="bg-gray-900/40 backdrop-blur-sm border border-white/5 p-8 rounded-2xl hover:bg-white/5 transition-all hover:border-violet-500/30 group">
-                            <div className="mb-4 bg-gray-800/50 w-14 h-14 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div 
+                            key={item.id} 
+                            className="group relative h-62 rounded-3xl bg-gray-900/40 border border-white/5 overflow-hidden transition-all duration-500 hover:border-violet-500/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] backdrop-blur-sm"
+                        >
+                            <div className="absolute inset-0 bg-linear-to-br from-violet-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center transition-transform duration-500 group-hover:-translate-y-10">
+                                <div className="text-5xl text-violet-400 mb-6 transition-all duration-500 group-hover:scale-75 group-hover:text-fuchsia-400">
                                 {item.icono}
+                                </div>
+                                <h3 className="text-xl font-bold text-white group-hover:text-violet-200 transition-colors">
+                                {item.titulo}
+                                </h3>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">{item.titulo}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                            <div className="absolute inset-x-0 bottom-0 p-6 text-center translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                                <p className="text-gray-300 text-sm leading-relaxed">
+                                {item.desc}
+                                </p>
+                                <div className="w-12 h-1 bg-violet-500 rounded-full mx-auto mt-6"></div>
+                            </div>
                         </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
         </section>
-    )
-}
+    );
+};
 
 export default Servicios;

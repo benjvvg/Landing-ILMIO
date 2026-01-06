@@ -49,31 +49,36 @@ function Servicios() {
                         Soluciones pensadas para resolver necesidades reales hoy y construir el ecosistema del mañana.
                     </p>
                 </div>
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {listaServicios.map((item) => (
                         <div 
                             key={item.id} 
-                            className="group relative h-62 rounded-3xl bg-gray-900/40 border border-white/5 overflow-hidden transition-all duration-500 hover:border-violet-500/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] backdrop-blur-sm"
+                            className="group relative h-72 rounded-3xl bg-gray-900/40 border border-white/5 overflow-hidden transition-all duration-500 hover:border-violet-500/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] backdrop-blur-sm"
                         >
-                            <div className="absolute inset-0 bg-linear-to-br from-violet-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center transition-transform duration-500 group-hover:-translate-y-10">
-                                <div className="text-5xl text-violet-400 mb-6 transition-all duration-500 group-hover:scale-75 group-hover:text-fuchsia-400">
-                                {item.icono}
+                            <div className="absolute inset-0 bg-linear-to-br from-violet-600/10 via-transparent to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center transition-transform duration-500 -translate-y-10 lg:translate-y-0 lg:group-hover:-translate-y-10">
+                                
+                                <div className="text-5xl text-violet-400 mb-6 transition-all duration-500 scale-75 lg:scale-100 lg:group-hover:scale-75 lg:group-hover:text-fuchsia-400">
+                                    {item.icono}
                                 </div>
-                                <h3 className="text-xl font-bold text-white group-hover:text-violet-200 transition-colors">
-                                {item.titulo}
+                                
+                                <h3 className="text-xl font-bold text-white lg:group-hover:text-violet-200 transition-colors">
+                                    {item.titulo}
                                 </h3>
                             </div>
-                            <div className="absolute inset-x-0 bottom-0 p-6 text-center translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+
+                            <div className="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-500 translate-y-0 opacity-100 lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
                                 <p className="text-gray-300 text-sm leading-relaxed">
-                                {item.desc}
+                                    {item.desc}
                                 </p>
                                 <div className="w-12 h-1 bg-violet-500 rounded-full mx-auto mt-6"></div>
                             </div>
                         </div>
-                        ))}
-                    </div>
+                    ))}
                 </div>
+            </div>
         </section>
     );
 };

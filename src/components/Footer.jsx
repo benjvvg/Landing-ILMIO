@@ -24,8 +24,8 @@ function Footer() {
                         <ul className="space-y-2 text-sm text-gray-400">
                             <li><a href="#" className="hover:text-violet-400 transition-colors">Inicio</a></li>
                             <li><a href="#servicios" className="hover:text-violet-400 transition-colors">Servicios</a></li>
-                            <li><a href="#evolución" className="hover:text-violet-400 transition-colors">Arquitectura</a></li>
-                            <li><a href="#operación" className="hover:text-violet-400 transition-colors">Metodología</a></li>
+                            <li><a href="#evolución" className="hover:text-violet-400 transition-colors">Evolución</a></li>
+                            <li><a href="#operación" className="hover:text-violet-400 transition-colors">Operación</a></li>
                             <li><a href="#contacto" className="hover:text-violet-400 transition-colors">Contacto</a></li>
                         </ul>
                     </div>

@@ -4,7 +4,7 @@ function Contacto() {
     return (
         <section id="contacto" className='min-h-200 flex items-center justify-center px-4 relative z-10 overflow-hidden'>
             <video autoPlay loop muted playsInline className='absolute inset-0 w-full h-full object-cover -z-20'>
-                <source src='public\video-fondoilmio.mp4' type='video/mp4'/>
+                <source src='video-fondoilmio.mp4' type='video/mp4'/>
             </video>
             <div className='absolute inset-0 bg-black/50 -z-10'></div>
                 <div className=' w-full max-w-4xl mx-auto'>

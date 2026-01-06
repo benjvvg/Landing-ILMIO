@@ -16,7 +16,7 @@ function Metodologia() {
                 <div className="text-center mb-20 relative z-10">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Operación</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Eliminamos la burocracia innecesaria. Un flujo de trabajo ágil diseñado para entregar valor tangible rapidamente.
+                        Eliminamos la burocracia innecesaria. Un flujo de trabajo ágil diseñado para entregar valor tangible rápidamente.
                     </p>
                 </div>
                 <div className="absolute left-8 md:left-1/2 top-40 -bottom-10 w-0.5 bg-linear-to-b from-violet-500 via-fuchsia-500 to-transparent -translate-x-1/2 z-0"></div>

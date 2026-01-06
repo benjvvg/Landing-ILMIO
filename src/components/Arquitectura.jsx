@@ -38,9 +38,9 @@ function Arquitectura() {
             <div className="max-w-6xl mx-auto relative">
 
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Capas de evolución</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Capas de Evolución</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Una arquitectura modular: resolviendo hoy y expandiendo hacia el ecosistema neuronal
+                        Una arquitectura modular: resolviendo hoy y expandiendo hacia el ecosistema neuronal.
                     </p>
                 </div>
 

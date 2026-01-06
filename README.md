@@ -1,16 +1,46 @@
-# React + Vite
+#  ILMIO - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Sistemas vivos en evolución.**
+> Transformamos ideas en software escalable, automatización y arquitecturas robustas.
 
-Currently, two official plugins are available:
+##  Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este repositorio contiene el código fuente de la **Landing Page oficial de ILMIO**.
+El proyecto ha sido diseñado con un enfoque moderno, utilizando efectos visuales avanzados como **Glassmorphism** (efecto cristal) en la barra de navegacion y algunos componentes, gradientes dinámicos y fondos de video inmersivos para transmitir la identidad tecnológica de la agencia.
 
-## React Compiler
+##  Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+El proyecto está construido con un stack moderno y optimizado para el rendimiento:
 
-## Expanding the ESLint configuration
+* **[React](https://react.dev/)**: Librería principal para la interfaz de usuario.
+* **[Vite](https://vitejs.dev/)**: Entorno de desarrollo.
+* **[Tailwind CSS](https://tailwindcss.com/)**: Framework de utilidades para un diseño responsivo y personalizado.
+* **React Icons**: Para la iconografía vectorial (Bootstrap Icons).
+* **React Simple Typewriter**: Efecto de escritura automática en el Hero.
+* **React Router**: Para el ruteo entre distintos componentes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Características Principales
+
+* ** Diseño UI/UX Moderno**: Tema oscuro con acentos en violeta y fucsia, utilizando transparencias y desenfoques (Backdrop Blur).
+* ** Sección de Contacto Inmersiva**: Fondo de video en loop (`.mp4`) con superposición de capas para mejorar la legibilidad.
+* ** Responsivo**: Adaptado perfectamente a móviles, tablets y escritorio.
+* ** Navegación Fluida**: Navbar con efectos de scroll suave (`smooth scroll`) hacia las secciones.
+* ** Integración de Correo**: Botones de contacto configurados para abrir directamente el cliente de correo o Gmail.
+* ** Sección de Arquitectura**: Tarjetas interactivas con efectos de iluminación al pasar el mouse (Hover Effects).
+
+
+##  Estructura del Proyecto
+
+```text
+src/
+├── assets/          # Imágenes, videos y recursos estáticos
+├── components/      # Componentes de React (Hero, Navbar, Contacto, etc.)
+│   ├── Arquitectura.jsx
+│   ├── Contacto.jsx
+│   ├── Footer.jsx
+│   ├── Hero.jsx
+│   ├── Metodologia.jsx
+│   ├── Navbar.jsx
+│   └── Servicios.jsx
+├── App.jsx          # Componente principal que maneja las secciones
+└── main.jsx         # Punto de entrada de la aplicación

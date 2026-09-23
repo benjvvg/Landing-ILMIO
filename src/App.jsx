@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Servicios from './components/Servicios'
 import Metodologia from './components/Metodologia';
 import Arquitectura from './components/Arquitectura';
+import Faq from './components/Faq';
 import Contacto from './components/Contacto'
 import Footer from './components/Footer';
 
@@ -29,6 +30,7 @@ function App() {
                 <Servicios />
                 <Arquitectura />
                 <Metodologia />
+                <Faq />
                 <Contacto />
                 <Footer />
               </main>

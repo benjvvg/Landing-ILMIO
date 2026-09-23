@@ -1,39 +1,45 @@
-import { BsFileEarmarkLock, BsWhatsapp, BsRobot, BsHddNetwork, BsTools, BsCloudCheck } from "react-icons/bs";
+import { BsFileEarmarkLock, BsWhatsapp, BsRobot, BsHddNetwork, BsTools, BsCloudCheck, BsCashStack } from "react-icons/bs";
 
 function Servicios() {
     const listaServicios = [
         {
             id: 1,
+            titulo: "Cobranza Inteligente",
+            desc: "Recuperación de matrículas y mora estudiantil con IA para instituciones de educación superior en Chile, vía WhatsApp, voz y reportería en tiempo real.",
+            icono: <BsCashStack className="h-8 w-8 text-emerald-400" />
+        },
+        {
+            id: 2,
             titulo: "Automatización de procesos",
             desc: "Digitalización de flujos operativos y administrativos que hoy dependen de tareas manuales.",
             icono: <BsRobot className="h-8 w-8 text-violet-400" />
         },
         {
-            id: 2,
+            id: 3,
             titulo: "Omnicanalidad",
             desc: "Experiencias conversacionales (WhatsApp/Web) con agentes IA, contexto y derivación humana.",
             icono: <BsWhatsapp className="h-8 w-8 text-green-400" />
         },
         {
-            id: 3,
+            id: 4,
             titulo: "Gestión Documental",
             desc: "Flujos seguros para documentos sensibles con control de estados, evidencia y auditoría.",
             icono: <BsFileEarmarkLock className="w-8 h-8 text-blue-400" />
         },
         {
-            id: 4,
+            id: 5,
             titulo: "Integración Enterprise",
             desc: "Conectamos sistemas legacy y herramientas modernas para que la información fluya.",
             icono: <BsHddNetwork className="w-8 h-8 text-purple-400" />
         },
         {
-            id: 5,
+            id: 6,
             titulo: "Soporte & Evolución",
             desc: "Operación post go-live: SLA, monitoreo, ajustes y mejoras continuas.",
             icono: <BsTools className="w-8 h-8 text-orange-400" />
         },
         {
-            id: 6,
+            id: 7,
             titulo: "Arquitectura Cloud",
             desc: "Buenas prácticas para disponibilidad, seguridad, escalabilidad y control de costos.",
             icono: <BsCloudCheck className="w-8 h-8 text-cyan-400" />

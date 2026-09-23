@@ -5,7 +5,7 @@ function Servicios() {
         {
             id: 1,
             titulo: "Cobranza Inteligente",
-            desc: "Recuperación de matrículas y mora estudiantil con IA para instituciones de educación superior en Chile, vía WhatsApp, voz y reportería en tiempo real.",
+            desc: "Recuperación de cartera con IA (WhatsApp, voz, reportería en tiempo real) para educación superior, banca, retail y servicios en Chile.",
             icono: <BsCashStack className="h-8 w-8 text-emerald-400" />
         },
         {

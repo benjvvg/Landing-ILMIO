@@ -2,7 +2,7 @@ function Faq() {
     const preguntas = [
         {
             pregunta: "¿Qué es ILMIO?",
-            respuesta: "ILMIO es una plataforma de cobranza inteligente que usa inteligencia artificial para automatizar la recuperación de matrículas y mora estudiantil de instituciones de educación superior en Chile, a través de WhatsApp, voz y reportería en tiempo real."
+            respuesta: "ILMIO es una empresa de tecnología que diseña sistemas de automatización e inteligencia artificial para procesos empresariales. Una de sus soluciones es Cobranza Inteligente, que automatiza la recuperación de cartera vía WhatsApp, voz y reportería en tiempo real, para instituciones de educación superior, banca, retail y servicios en Chile."
         }
     ];
 

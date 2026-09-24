@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-CL">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -10,7 +10,60 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/index.css">
-    <title>Ilmio</title>
+    <title>ILMIO — Automatización, IA y Cobranza Inteligente en Chile</title>
+    <meta
+      name="description"
+      content="ILMIO es una empresa de tecnología en Chile que diseña sistemas de automatización e inteligencia artificial, incluyendo Cobranza Inteligente para educación superior, banca, retail y servicios."
+    />
+
+    <!--
+      Datos estructurados schema.org — parte del plan de desambiguación de
+      entidad: ILMIO se confunde con homónimos (Illumio, Ilumno, ILMIODESIGN,
+      "il mio") en respuestas de motores de IA (hallazgo confirmado por el
+      observatorio GEO de lab-discovery). name/legalName/description/url
+      identifican a la empresa real; description menciona explícitamente
+      cobranza, educación superior, Chile e inteligencia artificial para
+      que ningún motor de IA la interprete como otra cosa.
+      sameAs queda vacío a propósito -- se completa cuando existan
+      perfiles reales de Wikidata/LinkedIn/Google Business que enlazar.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ILMIO",
+        "legalName": "ILMIO SpA",
+        "description": "ILMIO es una empresa de tecnología que diseña sistemas de automatización e inteligencia artificial para procesos empresariales. Una de sus soluciones es Cobranza Inteligente, que automatiza la recuperación de cartera vía WhatsApp, voz y reportería en tiempo real, para instituciones de educación superior, banca, retail y servicios en Chile.",
+        "url": "https://ilmio.tech",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "CL"
+        },
+        "sameAs": []
+      }
+    </script>
+
+    <!--
+      FAQPage -- coincide con el contenido visible de src/components/Faq.jsx
+      (misma pregunta/respuesta). Apunta directo al tipo de pregunta que el
+      observatorio GEO detectó respondida con homónimos ("¿Qué es ILMIO?").
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es ILMIO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ILMIO es una empresa de tecnología que diseña sistemas de automatización e inteligencia artificial para procesos empresariales. Una de sus soluciones es Cobranza Inteligente, que automatiza la recuperación de cartera vía WhatsApp, voz y reportería en tiempo real, para instituciones de educación superior, banca, retail y servicios en Chile."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

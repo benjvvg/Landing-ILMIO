@@ -33,16 +33,33 @@ async function main() {
   const server = await preview({ preview: { port: PORT, host: "127.0.0.1" } });
   const url = `http://127.0.0.1:${PORT}/`;
 
+  // Flags de robustez para entornos de CI/contenedores (ej. el build de
+  // Netlify) -- sin --disable-dev-shm-usage, Chrome puede fallar por
+  // memoria compartida (/dev/shm) limitada en esos contenedores. Mismo
+  // flag que ya usa el sistema real de ILMIO en este servidor
+  // (/var/www/ilmio) para su propio uso de Puppeteer.
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-gpu",
+      "--no-first-run",
+    ],
   });
 
   try {
     const page = await browser.newPage();
-    await page.goto(url, { waitUntil: "networkidle0" });
+    // Diagnóstico extra: si esto vuelve a fallar en CI y no hay acceso al
+    // log del panel de Netlify, al menos queda algo útil en la salida del
+    // build (stdout/stderr del comando `npm run build`).
+    page.on("console", (msg) => console.log(`[prerender] console:${msg.type()}`, msg.text()));
+    page.on("pageerror", (err) => console.error("[prerender] pageerror:", err));
+
+    await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
     // Esperar a que React haya montado el contenido real -- #servicios
     // es la sección que incluye la tarjeta "Cobranza Inteligente".
-    await page.waitForSelector("#servicios h3");
+    await page.waitForSelector("#servicios h3", { timeout: 60000 });
 
     const html = await page.content();
     writeFileSync(DIST_INDEX, html);

@@ -1,3 +1,27 @@
+// *** ACTUALMENTE DESCONECTADO DEL BUILD (24/9/2026) ***
+// El hook "postbuild" que llamaba a este script se sacó de package.json
+// porque el Deploy Preview de Netlify falló 2 veces seguidas con este
+// paso activado (incluso con flags de robustez de Chrome como
+// --disable-dev-shm-usage) y no hay acceso a la cuenta de Netlify para
+// ver el log real y confirmar la causa exacta -- probablemente el
+// entorno de build minimalista de Netlify no tiene las librerías de
+// sistema que Chrome headless necesita para arrancar, a diferencia de
+// un servidor Ubuntu completo (donde este script sí corre bien, local y
+// en este mismo servidor).
+//
+// Lo más importante para el hallazgo GEO (desambiguación de entidad)
+// NO depende de este script: title, meta description y los JSON-LD
+// (Organization/FAQPage) ya son HTML estático en index.html, presentes
+// sin ejecutar ningún JS. Este script solo afecta que el CONTENIDO
+// VISIBLE renderizado por React (la tarjeta "Cobranza Inteligente", la
+// sección de FAQ) sea visible a crawlers que no ejecutan JavaScript --
+// una mejora deseable pero no bloqueante.
+//
+// Si se retoma más adelante: mejor como paso de GitHub Actions (runner
+// Ubuntu completo, con las librerías de Chrome ya presentes) en vez de
+// pelear con el build minimalista de Netlify -- ver discusión en el PR
+// #1 de este repo.
+//
 // Pre-renderizado post-build: levanta el sitio ya compilado en dist/,
 // lo renderiza una vez con un navegador headless (Puppeteer) y guarda el
 // HTML final (con el contenido de React ya montado) de vuelta en

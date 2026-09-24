@@ -1,31 +1,6 @@
-// *** ACTUALMENTE DESCONECTADO DEL BUILD (24/9/2026) ***
-// El hook "postbuild" que llamaba a este script se sacó de package.json
-// porque el Deploy Preview de Netlify falló 2 veces seguidas con este
-// paso activado (incluso con flags de robustez de Chrome como
-// --disable-dev-shm-usage) y no hay acceso a la cuenta de Netlify para
-// ver el log real y confirmar la causa exacta -- probablemente el
-// entorno de build minimalista de Netlify no tiene las librerías de
-// sistema que Chrome headless necesita para arrancar, a diferencia de
-// un servidor Ubuntu completo (donde este script sí corre bien, local y
-// en este mismo servidor).
-//
-// Lo más importante para el hallazgo GEO (desambiguación de entidad)
-// NO depende de este script: title, meta description y los JSON-LD
-// (Organization/FAQPage) ya son HTML estático en index.html, presentes
-// sin ejecutar ningún JS. Este script solo afecta que el CONTENIDO
-// VISIBLE renderizado por React (la tarjeta "Cobranza Inteligente", la
-// sección de FAQ) sea visible a crawlers que no ejecutan JavaScript --
-// una mejora deseable pero no bloqueante.
-//
-// Si se retoma más adelante: mejor como paso de GitHub Actions (runner
-// Ubuntu completo, con las librerías de Chrome ya presentes) en vez de
-// pelear con el build minimalista de Netlify -- ver discusión en el PR
-// #1 de este repo.
-//
 // Pre-renderizado post-build: levanta el sitio ya compilado en dist/,
-// lo renderiza una vez con un navegador headless (Puppeteer) y guarda el
-// HTML final (con el contenido de React ya montado) de vuelta en
-// dist/index.html.
+// lo renderiza una vez con un navegador headless y guarda el HTML final
+// (con el contenido de React ya montado) de vuelta en dist/index.html.
 //
 // Por qué: el <head> (title, meta description, JSON-LD Organization/
 // FAQPage) ya es HTML estático y lo ve cualquier crawler sin ejecutar
@@ -35,16 +10,33 @@
 // que sin este paso no verían ese contenido. Ver CLAUDE.md de
 // lab-discovery (hallazgo GEO de homónimos) para el contexto completo.
 //
+// *** HISTORIAL (ver PR #1) ***
+// v1 usaba el paquete `puppeteer` normal -- el Deploy Preview de Netlify
+// falló 2 veces seguidas con ese paso activado (incluso con flags de
+// robustez como --disable-dev-shm-usage), probablemente porque el
+// entorno de build de Netlify no tiene las librerías de sistema que
+// Chrome headless necesita para arrancar. Se sacó del build por un
+// tiempo (title/meta/JSON-LD ya cubrían el hallazgo GEO sin depender de
+// esto).
+//
+// v2 (esta versión, 24/9/2026) reemplaza `puppeteer` por
+// `puppeteer-core` + `@sparticuz/chromium` -- un binario de Chromium
+// empaquetado específicamente para correr en entornos restringidos tipo
+// AWS Lambda/Netlify, sin depender de las librerías de sistema que
+// probablemente faltan. Si esto también falla en el build de Netlify,
+// el plan B es mover el pre-renderizado a GitHub Actions (runner Ubuntu
+// completo, con las librerías de Chrome ya presentes).
+//
 // No se usó react-snap (sin mantenimiento desde ~2020, riesgo de
-// incompatibilidad con React 19 / Vite 7) -- este script es la
-// alternativa explícitamente acordada.
+// incompatibilidad con React 19 / Vite 7).
 //
 // main.jsx usa ReactDOM.createRoot(...).render(...), no hydrateRoot, así
 // que no hay riesgo de mismatch de hidratación: en un navegador real,
 // React simplemente vuelve a renderizar sobre el HTML pre-renderizado.
 
 import { preview } from "vite";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 import { writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -57,19 +49,11 @@ async function main() {
   const server = await preview({ preview: { port: PORT, host: "127.0.0.1" } });
   const url = `http://127.0.0.1:${PORT}/`;
 
-  // Flags de robustez para entornos de CI/contenedores (ej. el build de
-  // Netlify) -- sin --disable-dev-shm-usage, Chrome puede fallar por
-  // memoria compartida (/dev/shm) limitada en esos contenedores. Mismo
-  // flag que ya usa el sistema real de ILMIO en este servidor
-  // (/var/www/ilmio) para su propio uso de Puppeteer.
   const browser = await puppeteer.launch({
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-gpu",
-      "--no-first-run",
-    ],
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
   });
 
   try {

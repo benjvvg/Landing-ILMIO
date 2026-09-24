@@ -5,7 +5,7 @@ function Servicios() {
         {
             id: 1,
             titulo: "Cobranza Inteligente",
-            desc: "Un módulo del ecosistema ILMIO: predice probabilidad de pago y convierte años de experiencia real en cobranza en estrategias de gestión que aprenden de resultados — ejecutadas por agentes inteligentes, con visibilidad total del recupero en tiempo real. Para educación superior, banca, retail y servicios en Chile.",
+            desc: "Predicción de pago y estrategias de gestión con IA, basadas en experiencia real de cobranza — para educación superior, banca, retail y servicios en Chile.",
             icono: <BsCashStack className="h-8 w-8 text-emerald-400" />
         },
         {
